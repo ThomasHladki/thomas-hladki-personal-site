@@ -1,10 +1,9 @@
 import React, {useEffect, useState} from "react";
 import Particles, {initParticlesEngine} from "@tsparticles/react";
 import {loadFull} from "tsparticles";
-import logo from "./logo.svg";
-import "./App.css";
 import particlesOptions from "./particles.json";
 import Title from "./components/Title";
+import tempPhoto from './content/tempPhoto.jpg';
 
 function App() {
     const [init, setInit] = useState(false);
@@ -22,10 +21,14 @@ function App() {
     }, []);
 
     return (
-        <div className="App">
+        <div className="App flex justify-center">
             {init && <Particles options={particlesOptions}/>}
+            <Title
+                name="Thomas Hladki"
+                headshotImgSrc={tempPhoto}
+            ></Title>
 
-            <Title></Title>
+            
         </div>
         
     );
